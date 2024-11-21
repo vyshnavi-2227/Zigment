@@ -63,7 +63,7 @@ const JSONEditor = ({ jsonSchema, setJsonSchema }) => {
       )}
 
       <textarea
-        className={`w-full min-h-56 h-full  p-4 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-200 border ${error ? 'border-red-500' : 'border-gray-300'} dark:border-gray-700 rounded`}
+        className={`w-full min-h-56 h-full  p-4 bg-blue-100 dark:bg-blue-800 text-gray-900 dark:text-gray-200 border ${error ? 'border-red-500' : 'border-gray-300'} dark:border-gray-700 rounded`}
         value={jsonSchema}
         onChange={handleInputChange}
         placeholder="Enter your JSON schema here..."

@@ -10,7 +10,7 @@ const initialJson = `
   "fields": [
     { "label": "Name", "type": "text", "id": "name", "required": true },
     { "label": "Email", "type": "email", "id": "email", "required": true },
-    { "label": "Message", "type": "textarea", "id": "message" },
+    { "label": "Password", "type": "textarea", "id": "password" },
     { "label": "Gender", "type": "select", "id": "gender",
       "options": [
      { "value": "Male", "label": "Male" },

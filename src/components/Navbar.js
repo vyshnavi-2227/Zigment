@@ -7,7 +7,7 @@ const Navbar = ({ jsonSchema, setJsonSchema, downloadJSON, copyToClipboard, rese
   return (
     <nav className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow p-4 flex flex-col md:flex-row justify-between items-center">
       <div className="text-xl font-bold flex justify-between w-full md:w-auto">
-        Dynamic Form Generator
+        <h1>Dynamic Form Generator</h1>
         <button
           className="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -35,21 +35,21 @@ const Navbar = ({ jsonSchema, setJsonSchema, downloadJSON, copyToClipboard, rese
       >
         <button
           onClick={downloadJSON}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full md:w-auto"
+          className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded w-full md:w-auto"
         >
           Download JSON
         </button>
 
         <button
           onClick={copyToClipboard}
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full md:w-auto"
+          className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded w-full md:w-auto"
         >
           Copy to Clipboard
         </button>
 
         <button
           onClick={resetSchema}
-          className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded w-full md:w-auto"
+          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded w-full md:w-auto"
         >
           Reset
         </button>

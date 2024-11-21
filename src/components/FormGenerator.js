@@ -49,8 +49,35 @@ const FormGenerator = ({ schema }) => {
             {schema.formTitle}
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-center">{schema.formDescription}</p>
-
           {schema.fields.map((field) => (
+  field.id && field.id.trim() !== "" && (
+    <div key={field.id} >
+      <label className="block font-medium text-gray-800 dark:text-gray-200 mb-1">
+        {field.label}
+      </label>
+
+      {[
+        "text", "email", "password", "number", "tel", "url",
+        "search", "date", "time", "datetime-local", "month",
+        "week", "color"
+      ].includes(field.type) && (
+          <input
+            type={field.type}
+            placeholder={field.placeholder}
+            {...register(field.id, { required: field.required })}
+            className="w-full p-1 md:p-3 border border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700"
+          />
+        )}
+
+      {field.type === "textarea" && (
+        <input
+          type="password"
+          placeholder={field.placeholder}
+          {...register(field.id, { required: field.required })}
+          className="w-full p-1 md:p-3 border border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700"
+        />
+      )}
+          {/* {schema.fields.map((field) => (
             field.id && field.id.trim() !== "" && (
               <div key={field.id} >
                 <label className="block font-medium text-gray-800 dark:text-gray-200 mb-1">
@@ -76,7 +103,7 @@ const FormGenerator = ({ schema }) => {
                     {...register(field.id, { required: field.required })}
                     className="w-full p-1 md:p-3 border border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700"
                   />
-                )}
+                )} */}
 
                 {field.type === "select" && field.options && (
                   <select
@@ -154,7 +181,7 @@ const FormGenerator = ({ schema }) => {
             <button type="submit" className="w-full bg-green-500 dark:bg-green-700 text-white py-2 rounded hover:bg-green-600">
               Submit
             </button>
-            <button type="reset" onClick={() => reset()} className="w-full bg-black-500 dark:bg-gray-700 text-white py-2 rounded hover:bg-gray-600">
+            <button type="reset" onClick={() => reset()} className="w-full bg-red-500 dark:bg-red-700 text-white py-2 rounded hover:bg-red-600">
               Reset
             </button>
 
